@@ -1,0 +1,151 @@
+/* Background & Centering */
+.login-container {
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+  
+   
+  }
+  
+  /* Login Box */
+  .login-box {
+    background: black;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  /* Title */
+  .login-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .facebook { background-color: #3b5998; }
+  .twitter { background-color: #1da1f2; }
+  .linkedin { background-color: #0077b5; }
+  
+  .icon:hover {
+    opacity: 0.8;
+  }
+  
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: gray;
+    margin: 1rem 0;
+  }
+  
+  .divider hr {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: gray;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    font-size: 0.9rem;
+    color: lightgray;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    margin-top: 5px;
+  }
+
+  .input-group select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    margin-top: 5px;
+  }
+  
+  /* Options (Remember Me & Forgot Password) */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 1rem;
+  }
+  
+  .options a {
+    color: lightblue;
+    text-decoration: none;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Register Text */
+  .register-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+  .register-text a {
+    color: red;
+    text-decoration: none;
+  }
+  
+  .register-text a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,51 @@
+footer {
+    background-color:  #e7eceb; 
+    color:black;
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 30px;
+  }
+  
+  /* Footer Headings */
+  footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  /* Footer Links */
+  footer p a {
+    color:black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer p a:hover {
+    color: #00cccc; /* Light teal color on hover */
+    text-decoration: underline;
+  }
+  
+  /* Social Icons */
+  footer .social-icons a {
+    color:black;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    color: #00cccc; /* Light teal color on hover */
+  }
+  
+  /* Footer Copyright */
+  footer .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+  }

@@ -1,0 +1,184 @@
+/* General Styling */
+.dashboard-container {
+    display: flex;
+    height: auto;
+    background-color: #1e1e2d;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #111827;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.scrollable-content {
+    height: 100vh;
+    overflow-y: auto;
+   width: 100%; 
+     padding: 10px;
+}
+
+/* Sidebar Hidden for Small Screens */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+}
+
+/* Sidebar Header (Includes Brand & Close Button) */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Close Button (Cross Icon) */
+.close-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+    display: none; /* Hide by default (for desktop) */
+}
+
+/* Show Close Button Only on Small Screens */
+@media (max-width: 1024px) {
+    .close-menu {
+        display: block;
+    }
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar-menu li a.active,
+.sidebar-menu li a:hover {
+    background-color: #3b82f6;
+}
+
+.sidebar-menu li a svg {
+    margin-right: 10px;
+}
+
+.sidebar-menu li a.logout {
+    color: #f87171;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust for sidebar width */
+    transition: margin-left 0.3s ease;
+}
+
+/* Adjust when sidebar is hidden */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Header */
+header {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #374151;
+    position: sticky;
+   top: 0;
+   z-index: 10;
+
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Show Hamburger Menu on Small Screens */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Search Bar */
+.search-bar input {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.sidebar-logo {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the logo */
+    display: block; /* Ensure the logo is a block element */
+}
+/* Main Content */
+main {
+    padding: 20px;
+    color: #fff;
+}
+
+main h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h4{
+    color: rgb(232, 252, 55);
+    text-transform: uppercase;
+    font-size: 18px;
+}
