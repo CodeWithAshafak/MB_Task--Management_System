@@ -16,7 +16,8 @@ const UserReport=()=>{
         let api="http://localhost:9000/admin/userreport"
         try {
             const response= await axios.get(api);
-            console.log(response.data)
+            console.log("API Response:", response.data)
+
             setMydata(response.data)
         } catch (error) {
             console.log(error)
@@ -56,6 +57,8 @@ const ans= mydata.map((key)=>{
        <td>{key.empid.email}</td> 
        <td>{key.taskTitle}</td> 
        <td>{key.discription}</td> 
+       <td>{key.priority}</td> 
+
        <td>{key.completionDays}</td> 
        <td>{key.taskstatus}</td> 
        <td>{key.empReport=="submited"?(<span style={{color:"green", fontWeight:"bold"}}>{key.empReport}</span>):(<span style={{color:"red", fontWeight:"bold"}}>{key.empReport}</span>)}
@@ -71,17 +74,18 @@ const ans= mydata.map((key)=>{
     
     return(
         <>
-       <h1>user Report</h1> 
+       <h1> Current Employee Tasks</h1> 
        <Table striped bordered hover  style={{fontSize:"12px"}}>
       <thead>
         <tr>
-            <th>#</th>
+          <th>#</th>
           <th>S.no</th>
           <th>Employee Name</th>
           <th>Designation</th>
           <th>Email</th>
           <th>Task Title</th>
           <th>Task Description</th>
+          <th>Priority</th>
           <th>Assign Days</th>
           <th>Task Status</th>
           <th>Task Report</th>

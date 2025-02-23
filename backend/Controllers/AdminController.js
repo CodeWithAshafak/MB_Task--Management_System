@@ -3,6 +3,7 @@ const transporter=require("../Middlewere/Nodemailer")
 const RandomPass=require("../Middlewere/Randompass")
 const EmpModel=require("../Models/EMPModel")
 const TaskModel=require("../Models/taskModel")
+// const EMPModel = require("../Models/EMPModel")
 
 const AdminLogin=async(req , res)=>{
     const {userid , password}=req.body
@@ -30,11 +31,11 @@ const AdminLogin=async(req , res)=>{
 //.............................................Employee..data save and send mail...........................
 const CreateUser=async(req , res)=>{
     console.log(req.body)
-    const {empname,designation,email,terms}=req.body;
+    const {empname,designation,email}=req.body;
     const Mypass=RandomPass();
  //......email wala.........................
     const mailOptions = {
-     from: "nazneenbanosiddiqui@gmail.com", // Sender email
+     from: "ashafak04@gmail.com", // Sender email
      to:email,                          // Recipient email
      subject:"New-Vision Company Work Detail Account",                     // Email subject
      text:`Dear ${empname} Your Account created with password : ${Mypass} 
@@ -50,7 +51,7 @@ try {
         designation:designation,
         email:email,
         password:Mypass,
-        terms:terms
+        
        
     })
  res.status(200).json({ success: true, message: 'Email sent', info });
@@ -59,7 +60,7 @@ try {
     res.status(500).json({ success: false, error: error.message });
 }
 }
-// task display ke liye................
+
 const AssinTaskDisplay=async(req , res)=>{
     try {
      const User = await EmpModel.find()
@@ -71,14 +72,19 @@ const AssinTaskDisplay=async(req , res)=>{
  
  //task assign for employee.............
  const AssignTaskSave=async(req ,res)=>{
-  const { empid,taskTitle ,description, completionDays}=req.body
+  const { empid,taskTitle ,description, completionDays ,priority}=req.body
+  
+  
+  console.log(req.body);
   
   try {
      const Task = await TaskModel.create({
          taskTitle:taskTitle,
          discription:description,
          completionDays:completionDays,
-          empid:empid
+        empid:empid,
+           priority: priority
+
      })
      res.status(200).json({msg:"Task Assign Succesfuly!!!!"})
   } catch (error) {
@@ -87,8 +93,11 @@ const AssinTaskDisplay=async(req , res)=>{
  
  }
 
- //************emplyee report
+//************emplyee report
  const userReportDisplay=async(req, res)=>{
+
+    console.log(req.body);
+    
     try {
      const Task= await TaskModel.find().populate("empid")
      res.status(200).send(Task)
@@ -96,6 +105,11 @@ const AssinTaskDisplay=async(req , res)=>{
      console.log(error)
     }
   
+
+
+   
+
+
  }
 
  //************************reassign task
@@ -110,6 +124,48 @@ const AssinTaskDisplay=async(req , res)=>{
  }
  
 
+ const empdelete = async (req,res)=>{
+    
+    try {
+    
+    // res.send("chal rha he delete")
+    //  console.log(req.query);
+    const { empid } = req.query
+    await EmpModel.findByIdAndDelete(empid);
+    res.send("Student Data successfully Deleted...!")
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const TaskEditDisplay=async(req, res)=>{
+    console.log(req.body)
+
+const{id}=req.body
+try {
+   const Task=await EmpModel.findById(id)
+   console.log("bakcnd me ymila Details",Task);
+   
+ 
+   res.send(Task)
+ 
+} catch (error) {
+    console.log(error);
+}
+}
+
+
+const taskeditsave =  async(req,res)=>{
+    // console.log("req body is ka m ha behtla  ", req.body);
+    // res.send("chla rha ")
+  const { _id} = req.body
+  const responce = await EmpModel.findByIdAndUpdate(_id, req.body);
+
+  res.status(200).send({msg:"data saved successfully"})
+    
+
+    
+}
 
 module.exports={
     AdminLogin,
@@ -117,5 +173,10 @@ module.exports={
     AssinTaskDisplay,
     AssignTaskSave,
     userReportDisplay,
-    ReAssignTask
+    ReAssignTask,
+    empdelete,
+    TaskEditDisplay,
+    taskeditsave
+    
+    
 }

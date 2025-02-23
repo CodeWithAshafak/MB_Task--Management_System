@@ -1,7 +1,7 @@
 /* General Styling */
 .dashboard-container {
     display: flex;
-    height: auto;
+    height:100VH;
     background-color: #1e1e2d;
 }
 

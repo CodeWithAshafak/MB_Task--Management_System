@@ -2,6 +2,7 @@ const mongoose=require("mongoose");
 const taskSchema=new mongoose.Schema({
    taskTitle:String,
     discription:String,
+    priority:String,
     completionDays:String,
     taskstatus:{
       type:String,

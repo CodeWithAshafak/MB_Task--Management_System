@@ -8,6 +8,10 @@ import AssignTask from "./Pages/AssignTask";
 import UserReport from "./Pages/EmpReport";
 import DisplayUserTask from "./Pages/DisplayEmptask";
 
+import Empedit from "./Pages/Empedit";
+import Admin from "./Pages/Admin";
+import User from "./CSS/uSER.JSX";
+
 
 const App=()=>{
   return(
@@ -18,18 +22,20 @@ const App=()=>{
     <Route index element={<Login/>}/>
     <Route path="login" element={<Login/>}/>
     </Route>
+
     <Route path="admindashboard" element={<AdminDashboard/>}>
+    <Route index element={<Admin/>}/>
     <Route path="create employee" element={<CreateEmployee/>}/>
     <Route path="assign task" element={<AssignTask />} />
     <Route path="empreport" element={<UserReport/>}/>
-    
-    
+    <Route path='empedit/:id' element={<Empedit/>} />
     </Route>
+
     <Route path="empdashboard" element={<EmpDashboard/>}>
-    <Route path="displayemployee" element={<DisplayUserTask/>}/>
+    <Route index element={<User/>}/>
     
-    
-    </Route>
+     <Route path="displayemployee" element={<DisplayUserTask/>}/>
+</Route>
 
   
    </Routes>

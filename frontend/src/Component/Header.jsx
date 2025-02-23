@@ -11,7 +11,7 @@ const Header = () => {
       {/* Top bar */}
       <div className="top-bar">
         <div className="contact-info">
-          <span>📧 contact@example.com</span>
+          <span>📧 www.mycompany.com</span>
           <span>📞 +91 86984 68448</span>
         </div>
         <div className="social-icons">

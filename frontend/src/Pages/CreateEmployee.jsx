@@ -55,12 +55,12 @@ toast.success("User succesfully created!!");
             <input type="email" placeholder=" Email" required  name="email"  onChange={handleInput} />
           </div>
          
-          <div className="form-checkbox">
+          {/* <div className="form-checkbox">
             <input type="checkbox" id="terms" required  name="terms"  onChange={handleInput}/>
             <label htmlFor="terms">
               I agree all statements in <a href="/">Terms of service</a>
             </label>
-          </div>
+          </div> */}
           <button  className="btn-register" onClick={handleSubmit}>Register</button>
       </div>
       <div className="signup-image">

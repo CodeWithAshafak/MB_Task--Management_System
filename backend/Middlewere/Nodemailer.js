@@ -1,10 +1,14 @@
 const nodemailer = require('nodemailer');  // installing nodemailer= npm i nodemailer
 // Create a transporter
+
+require("dotenv").config();
+const key = process.env.KEY
+const email_ad = process.env.USER
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use 'gmail', 'outlook', etc., or configure SMTP settings
+  service: 'gmail', 
   auth: {
-    user: "nazneenbanosiddiqui@gmail.com", // Your email address
-    pass: "wbft bzxy uwyc efld" // Your email password or app-specific password
+    user: email_ad,
+    pass: key
   }
 });
 

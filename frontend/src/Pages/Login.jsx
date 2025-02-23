@@ -62,14 +62,16 @@ if(userType==="admin")
     <>
     <div className="login-container">
       <div className="login-box">
-        <h2 className="login-title">Sign in with</h2>
+        <h2 className="login-title">Log in with</h2>
          <div className="social-icons">
           <button className="icon facebook">
             <i className="fab fa-facebook-f"></i>
           </button>
+
           <button className="icon twitter">
             <i className="fab fa-twitter"></i>
           </button>
+          
           <button className="icon linkedin">
             <i className="fab fa-linkedin-in"></i>
           </button>
