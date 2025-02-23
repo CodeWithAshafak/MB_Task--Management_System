@@ -30,7 +30,7 @@ const TopNavbar=()=>{
 
 
 
-      <Navbar expand="lg" className="bg-body-tertiary"  bg="dark" data-bs-theme="dark">
+      <Navbar expand="lg" className="bg-body-tertiary"  bg="dark" data-bs-theme="dark" >
       <Container fluid>
         <Navbar.Brand href="#">Task Management System</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

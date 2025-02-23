@@ -1,11 +1,29 @@
 .app-container {
     display: flex;
     height: 100vh;
+    
     flex-direction: column;
   }
   
+  #top{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: grey;
+
+  }
+#main{
+  margin-top: 20px;
+}
+  h4{
+    text-align: center;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+  }
   .navbar {
     z-index: 10;
+    
   }
   
   .sidebarE {
@@ -44,13 +62,21 @@
     height: 500px;
     overflow-y: auto;
    width: 100%;
-    /* background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    */
+   margin: 20px;
+    background-color: #adceca;
+   
     
   }
   
+
+#empname{
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#logout{
+  color: #f7e8c1;
+}
+
   @media (max-width: 768px) {
     .sidebarE {
       position: relative;

@@ -28,18 +28,19 @@ const AdminLogin=async(req , res)=>{
    
 }
 
-//.............................................Employee..data save and send mail...........................
+
 const CreateUser=async(req , res)=>{
     console.log(req.body)
     const {empname,designation,email}=req.body;
     const Mypass=RandomPass();
  //......email wala.........................
     const mailOptions = {
-     from: "ashafak04@gmail.com", // Sender email
+     from: "ashafak04@gmail.com", 
      to:email,                          // Recipient email
-     subject:"New-Vision Company Work Detail Account",                     // Email subject
+     subject:"Rocket Brains pvt. Ltd.-  ",                     // Email subject
      text:`Dear ${empname} Your Account created with password : ${Mypass} 
       You can login using with your Email account
+      
      `
    };
      //mongoDb me ja raha he
@@ -93,7 +94,7 @@ const AssinTaskDisplay=async(req , res)=>{
  
  }
 
-//************emplyee report
+
  const userReportDisplay=async(req, res)=>{
 
     console.log(req.body);
@@ -105,14 +106,8 @@ const AssinTaskDisplay=async(req , res)=>{
      console.log(error)
     }
   
-
-
-   
-
-
  }
 
- //************************reassign task
  const ReAssignTask=async(req , res)=>{
     const { taskid }=req.body
     try {
@@ -127,7 +122,7 @@ const AssinTaskDisplay=async(req , res)=>{
  const empdelete = async (req,res)=>{
     
     try {
-    
+
     // res.send("chal rha he delete")
     //  console.log(req.query);
     const { empid } = req.query
@@ -156,15 +151,10 @@ try {
 
 
 const taskeditsave =  async(req,res)=>{
-    // console.log("req body is ka m ha behtla  ", req.body);
     // res.send("chla rha ")
   const { _id} = req.body
   const responce = await EmpModel.findByIdAndUpdate(_id, req.body);
-
-  res.status(200).send({msg:"data saved successfully"})
-    
-
-    
+  res.status(200).send({msg:"data saved successfully"})  
 }
 
 module.exports={
@@ -176,7 +166,5 @@ module.exports={
     ReAssignTask,
     empdelete,
     TaskEditDisplay,
-    taskeditsave
-    
-    
+    taskeditsave 
 }

@@ -9,7 +9,7 @@ import { FaUsersGear } from "react-icons/fa6";
 import { TbFileReport } from "react-icons/tb";
 
 import { GrUserAdmin } from "react-icons/gr";
-
+import { IoMdLogOut } from "react-icons/io";
 
 
 
@@ -29,13 +29,15 @@ setEmpemail(localStorage.getItem("empemail"))
     <>
    
     <div className="app-container">
-      {/* Top Navbar */}
-      <Navbar bg="Dark" variant="dark" expand="lg" fixed="top" style={{backgroundColor:"#008070"}}>
-        <Navbar.Brand href="#" style={{marginLeft:"700px"}} ><GrUserAdmin />  Employee Dashboard</Navbar.Brand>
+     
+      <Navbar id='top' bg="Dark" variant="dark" expand="lg" fixed="top">
+
+        <Navbar.Brand href="#"  ><GrUserAdmin />  Employee Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
+
         <Navbar.Collapse id="navbar-nav">
-          <Nav className="ml-auto" style={{marginLeft:"350px"}}>
-          <Nav.Link href="#" onClick={()=>{navigate("/login")}}>Logout</Nav.Link>
+          <Nav className="ms-auto" >
+          <Nav.Link id='logout' href="#" onClick={()=>{navigate("/login")}}> <IoMdLogOut /> Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -46,8 +48,11 @@ setEmpemail(localStorage.getItem("empemail"))
           <Col md={2} className="sidebarE">
             <Nav defaultActiveKey="/" className="flex-column">
               <Nav.Link as={Link} to="#"><GrDashboard/> Dashboard</Nav.Link>
-              <Nav.Link as={Link} to="displayemployee"><FaUsersGear/>  Display Employee</Nav.Link>
-              <Nav.Link as={Link} to="assign task"><TbFileReport/>    Assign Task</Nav.Link>
+
+              <Nav.Link as={Link} to="displayemployee"><FaUsersGear/> Employee Task</Nav.Link>
+
+
+              <Nav.Link as={Link} to="assign task"><TbFileReport/>Admin Contact</Nav.Link>
             
             </Nav>
           </Col> 
@@ -56,12 +61,20 @@ setEmpemail(localStorage.getItem("empemail"))
        
 
           {/* Main Content */}
-          <Col md={10} className="content">
+          <Col id='main' md={10} className="content">
             <div className="content-area">
-              <p align="center" style={{color:" #6b4b3a"}}>Welcome to the {empName} <br/>
+
+              <h1 id='empname'>Welcome : {empName}</h1>
+
+
+               <h4>{empName} , you have to submit following task</h4>
+
+              <p align="center" style={{color:" #6b4b3a"}}> <br/>
               Email : {empEmail} <Link to="reset">Reset-password</Link>               
              </p>
-              {/* Example scrollable content */}
+
+
+             
              
               <div className="scrollable-content">
              

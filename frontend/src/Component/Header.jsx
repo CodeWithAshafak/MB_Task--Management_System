@@ -8,7 +8,7 @@ import { FaFacebook } from "react-icons/fa";
 const Header = () => {
   return (
     <>
-      {/* Top bar */}
+     
       <div className="top-bar">
         <div className="contact-info">
           <span>📧 www.mycompany.com</span>

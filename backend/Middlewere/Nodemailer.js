@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer');  // installing nodemailer= npm i nodemailer
-// Create a transporter
+const nodemailer = require('nodemailer'); 
+
 
 require("dotenv").config();
 const key = process.env.KEY
@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Verify the transporter
+
 transporter.verify((error, success) => {
   if (error) {
     console.error('Error connecting to email service:', error);
