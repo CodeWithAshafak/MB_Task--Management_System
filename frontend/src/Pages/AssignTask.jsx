@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Modal, Form, Pagination } from "react-bootstrap";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { MdAutoDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -75,11 +77,23 @@ const AssignTask = () => {
 
     const myDel = async (id) => {
         alert(id)
-        let api = `http://localhost:9000/admin/empdelete/?empid=${id}`
-        const res = await axios.get(api);
-        console.log(res.data)
-        alert(res.data)
-        loadData()
+        let ans = window.confirm("want to delete")
+
+        if(ans){
+          let api = `http://localhost:9000/admin/empdelete/?empid=${id}`
+          const res = await axios.get(api);
+          console.log(res.data)
+          alert(res.data)
+          loadData()
+
+
+        }
+        else{
+          
+
+        }
+
+       
     }
 
     const myEdit = (id) => {

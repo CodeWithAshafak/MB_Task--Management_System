@@ -4,13 +4,15 @@ import img from "../images/dwar.webp"
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
-
+import { useNavigate } from "react-router-dom";
 
 
 const CreateEmployee=()=>{
-    const[input, setInput]=useState({})
 
-const handleInput=(e)=>{
+  const navigate = useNavigate()
+  const[input, setInput]=useState({})
+
+  const handleInput=(e)=>{
     let name=e.target.name;
     let value=e.target.value;
     setInput(values=>({...values , [name]:value}))
@@ -22,7 +24,9 @@ try {
     let api="http://localhost:9000/admin/createuser"
 const response = await axios.post(api,input)
 console.log(response.data)
-toast.success("User succesfully created!!");
+ toast.success("User succesfully created!!");
+ 
+navigate("/admindashboard/assign task")
 
 } catch (error) {
     console.log(error)
