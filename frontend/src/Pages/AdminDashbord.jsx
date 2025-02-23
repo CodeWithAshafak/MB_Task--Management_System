@@ -29,7 +29,7 @@ const AdminDashboard = () => {
             <div className={`main-content ${menuOpen ? "full" : ""}`}>
                 <header>
                     <FaBars className="menu-toggle" onClick={() => setMenuOpen(true)} />
-                    <h3> Admin DashBoard </h3>
+                    <h3> Rocket Brains Admin DashBoard </h3>
                     {/* <div className="user-info">
                         <img src={user} alt="User Icon" className="user-icon" />
                     </div> */}

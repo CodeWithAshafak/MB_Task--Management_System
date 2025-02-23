@@ -37,11 +37,8 @@ const CreateUser=async(req , res)=>{
     const mailOptions = {
      from: "ashafak04@gmail.com", 
      to:email,                          // Recipient email
-     subject:"Rocket Brains pvt. Ltd.-  ",                     // Email subject
-     text:`Dear ${empname} Your Account created with password : ${Mypass} 
-      You can login using with your Email account
-      
-     `
+     subject:"Rocket Brains pvt. Ltd. ",                     // Email subject
+     text:`Dear,${empname} Your Account has been created with password : ${Mypass}You can login by using Email ID and Password.Thank You ! `
    };
      //mongoDb me ja raha he
 try {
