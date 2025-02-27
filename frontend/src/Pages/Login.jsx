@@ -86,6 +86,8 @@ if(userType==="admin")
 
         
      
+
+     
           <div className="input-group">
             <input type="text" placeholder="Enter your ID"  name="userid" value={userid} onChange={(e)=>{setUserId(e.target.value)}} />
           </div>
@@ -104,7 +106,7 @@ if(userType==="admin")
           {/* Login Button */}
           <button className="login-btn" onClick={handleSubmit}>LOGIN</button>
       
-
+        
       
       </div>
     </div>
