@@ -10,7 +10,8 @@ import DisplayUserTask from "./Pages/DisplayEmptask";
 
 import Empedit from "./Pages/Empedit";
 import Admin from "./Pages/Admin";
-import User from "./CSS/uSER.JSX";
+import User from "./CSS/User.jsx";
+
 
 
 const App=()=>{
