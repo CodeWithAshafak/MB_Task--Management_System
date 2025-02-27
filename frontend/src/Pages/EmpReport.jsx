@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Rightimg from "../images/Right.jpeg"
 import worngimg from "../images/wrong.png"
 import { message } from "antd";
+import BASE_URL from "../Config";
 
 
 
@@ -13,7 +14,7 @@ const UserReport=()=>{
     const [mydata, setMydata]=useState([])
 
     const loadData=async()=>{
-        let api="http://localhost:9000/admin/userreport"
+        let api=`${BASE_URL}/admin/userreport`
         try {
             const response= await axios.get(api);
             console.log("API Response:", response.data)
@@ -28,7 +29,7 @@ const UserReport=()=>{
         },[])
 
 const  ReAssignTask=async(taskid)=>{
-    let api="http://localhost:9000/admin/reassignreport"
+    let api=`${BASE_URL}/admin/reassignreport`
     try {
         const response= await axios.post(api,{taskid:taskid});
        console.log(response.data)

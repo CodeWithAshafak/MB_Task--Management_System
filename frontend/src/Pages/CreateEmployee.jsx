@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../Config";
 
 
 const CreateEmployee=()=>{
@@ -21,7 +22,8 @@ const CreateEmployee=()=>{
 
 const handleSubmit=async()=>{
 try {
-    let api="http://localhost:9000/admin/createuser"
+   // let api="http://localhost:9000/admin/createuser"
+    let api= `${BASE_URL}/admin/createuser`
 const response = await axios.post(api,input)
 console.log(response.data)
  toast.success("User succesfully created!!");
@@ -59,12 +61,7 @@ navigate("/admindashboard/assign task")
             <input type="email" placeholder=" Email" required  name="email"  onChange={handleInput} />
           </div>
          
-          {/* <div className="form-checkbox">
-            <input type="checkbox" id="terms" required  name="terms"  onChange={handleInput}/>
-            <label htmlFor="terms">
-              I agree all statements in <a href="/">Terms of service</a>
-            </label>
-          </div> */}
+          
           <button  className="btn-register" onClick={handleSubmit}>Register</button>
       </div>
       <div className="signup-image">

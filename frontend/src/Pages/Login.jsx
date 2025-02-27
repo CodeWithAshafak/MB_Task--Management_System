@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../Config";
 
 const Login = () => {
     const[userid, setUserId]=useState("") 
@@ -16,7 +17,7 @@ const handleSubmit=async()=>{
 if(userType==="admin")
     {
       try {
-        let api="http://localhost:9000/admin/adminlogin";
+        let api= `${BASE_URL}/admin/adminlogin`;
         const response= await axios.post(api , {userid:userid, password:password})
         console.log(response.data.name)
     
@@ -38,7 +39,7 @@ if(userType==="admin")
     else if(userType==="employee")
     {
     try {
-      let api="http://localhost:9000/employee/employeelogin";
+      let api=  `${BASE_URL}/employee/employeelogin`;
       const response= await axios.post(api , {userid:userid, password:password})
       console.log(response.data)
       if(response.status===200)

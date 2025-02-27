@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Modal,  Form } from "react-bootstrap";
 import axios from 'axios';
+import BASE_URL from '../Config';
 
 
 const Empedit = () => {
@@ -20,7 +21,7 @@ const Empedit = () => {
 
   
   const loadData = async () => {
-    let api = "http://localhost:9000/admin/taskeditdisplay";
+    let api = `${BASE_URL}/admin/taskeditdisplay`;
     const response = await axios.post(api, { id });
     console.log(response.data);
     
@@ -42,7 +43,7 @@ const Empedit = () => {
     // console.log( input);
     
 try {
-  let api = "http://localhost:9000/admin/taskeditsave";
+  let api = `${BASE_URL}/admin/taskeditsave`;
     const responce = await axios.post(api ,input)
     console.log(responce.data);
     navigate("/admindashboard/assign task")

@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {message} from "antd"
+import BASE_URL from "../Config";
 
 
 
@@ -14,7 +15,7 @@ const DisplayUserTask=()=>{
 
     const loadData=async()=>{
 try {
-    let api="http://localhost:9000/employee/empdisplaytask"
+    let api= `${BASE_URL}/employee/empdisplaytask`
     const response= await axios.post(api , {empid:empid})
     setMydata(response.data)
     console.log(response.data)
@@ -30,7 +31,7 @@ try {
 
  const taskSubmit=async(taskid)=>{
     try {
-        let api="http://localhost:9000/employee/emptasksubmit"  
+        let api= `${BASE_URL}/employee/emptasksubmit`
         const response= await axios.post(api, {taskid:taskid, taskStatus:taskStatus})
         console.log(response.data)
         message.success(response.data.msg)
