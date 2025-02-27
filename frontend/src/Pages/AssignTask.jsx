@@ -49,7 +49,7 @@ const AssignTask = () => {
 
     const handleSaveTask = async () => {
         // let api = "http://localhost:9000/admin/savetask"
-        let api = `${BASE_URL}/admin/savetask`
+        let api=`${BASE_URL}/admin/savetask`
         try {
             const response = await axios.post(api, { empid: empid, taskTitle: taskTitle, description: description, completionDays: completionDays, priority: priority })
             console.log(response.data)
@@ -64,7 +64,7 @@ const AssignTask = () => {
     }
 
     const loadData = async () => {
-        let api = `${BASE_URL}/admin/assigntaskDisplay`
+        let api=`${BASE_URL}/admin/assigntaskDisplay`
         try {
             const response = await axios.get(api);
             setMyData(response.data)
@@ -82,7 +82,7 @@ const AssignTask = () => {
         let ans = window.confirm("want to delete")
 
         if(ans){
-          let api = `${BASE_URL}/admin/empdelete/?empid=${id}`
+          let api=`${BASE_URL}/admin/empdelete/?empid=${id}`
           const res = await axios.get(api);
           console.log(res.data)
           alert(res.data)

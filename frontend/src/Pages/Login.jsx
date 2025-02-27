@@ -17,7 +17,7 @@ const handleSubmit=async()=>{
 if(userType==="admin")
     {
       try {
-        let api= `${BASE_URL}/admin/adminlogin`;
+        let api=`${BASE_URL}/admin/adminlogin`;
         const response= await axios.post(api , {userid:userid, password:password})
         console.log(response.data.name)
     
@@ -39,7 +39,7 @@ if(userType==="admin")
     else if(userType==="employee")
     {
     try {
-      let api=  `${BASE_URL}/employee/employeelogin`;
+      let api=`${BASE_URL}/employee/employeelogin`;
       const response= await axios.post(api , {userid:userid, password:password})
       console.log(response.data)
       if(response.status===200)

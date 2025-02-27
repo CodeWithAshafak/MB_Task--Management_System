@@ -72,10 +72,6 @@ setEmpemail(localStorage.getItem("empemail"))
               <p align="center" style={{color:" #6b4b3a"}}> <br/>
               Email : {empEmail} <Link to="reset">Reset-password</Link>               
              </p>
-
-
-             
-             
               <div className="scrollable-content">
              
                 <Outlet/>

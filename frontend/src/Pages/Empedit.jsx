@@ -21,7 +21,7 @@ const Empedit = () => {
 
   
   const loadData = async () => {
-    let api = `${BASE_URL}/admin/taskeditdisplay`;
+    let api =`${BASE_URL}/admin/taskeditdisplay`;
     const response = await axios.post(api, { id });
     console.log(response.data);
     
@@ -43,7 +43,7 @@ const Empedit = () => {
     // console.log( input);
     
 try {
-  let api = `${BASE_URL}/admin/taskeditsave`;
+  let api=`${BASE_URL}/admin/taskeditsave`;
     const responce = await axios.post(api ,input)
     console.log(responce.data);
     navigate("/admindashboard/assign task")
@@ -52,11 +52,7 @@ try {
   console.log(error);
   
   
-}
-
-    
-     
-    
+} 
   };
 
   useEffect(() => {

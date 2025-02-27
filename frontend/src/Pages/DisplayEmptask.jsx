@@ -15,7 +15,7 @@ const DisplayUserTask=()=>{
 
     const loadData=async()=>{
 try {
-    let api= `${BASE_URL}/employee/empdisplaytask`
+    let api=`${BASE_URL}/employee/empdisplaytask`
     const response= await axios.post(api , {empid:empid})
     setMydata(response.data)
     console.log(response.data)
@@ -31,7 +31,7 @@ try {
 
  const taskSubmit=async(taskid)=>{
     try {
-        let api= `${BASE_URL}/employee/emptasksubmit`
+        let api=`${BASE_URL}/employee/emptasksubmit`
         const response= await axios.post(api, {taskid:taskid, taskStatus:taskStatus})
         console.log(response.data)
         message.success(response.data.msg)

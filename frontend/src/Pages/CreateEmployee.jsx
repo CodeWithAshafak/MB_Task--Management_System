@@ -23,7 +23,7 @@ const CreateEmployee=()=>{
 const handleSubmit=async()=>{
 try {
    // let api="http://localhost:9000/admin/createuser"
-    let api= `${BASE_URL}/admin/createuser`
+    let api=`${BASE_URL}/admin/createuser`
 const response = await axios.post(api,input)
 console.log(response.data)
  toast.success("User succesfully created!!");
