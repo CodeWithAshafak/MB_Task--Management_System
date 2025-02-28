@@ -31,7 +31,7 @@ The **Task Management System** is a web-based application designed to help users
 ## Contact
 For any queries, feel free to reach out:
 - **Email**: ashafak04@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **LinkedIn**: [Ashafak Astanwale](https://www.linkedin.com/in/ashafak-astanwale-4210b6267/)
 
 
 
