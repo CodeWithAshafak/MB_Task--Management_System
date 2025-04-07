@@ -18,7 +18,7 @@ if(userType==="admin")
     {
       try {
         let api=`${BASE_URL}/admin/adminlogin`;
-        const response= await axios.post(api , {userid:userid, password:password})
+        const response = await axios.post(api , {userid:userid, password:password})
         console.log(response.data.name)
     
         if(response.status==200)
